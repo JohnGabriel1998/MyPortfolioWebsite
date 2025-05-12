@@ -288,7 +288,7 @@ nav {
     transform: scale(1.1);
 }
 
-.portfolio__banner {
+/* .portfolio__banner {
     margin-top: 2rem;
     padding: 2rem;
     display: grid;
@@ -312,7 +312,7 @@ nav {
 
 .portfolio__banner__card p {
     font-weight: 500;
-}
+} */
 
 .contact__container {
     margin-top: 50px;
