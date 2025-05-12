@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "none";
     });
 });
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.getElementById("backToTop");
 
