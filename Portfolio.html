@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/Portfolio.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <title>My Portfolio</title>
 </head>
 
@@ -195,7 +196,7 @@
 
             <!-- Contact Form -->
             <div class="contact_form_container">
-                <form class="contact_form" id="contactForm">
+                <!-- <form class="contact_form" id="contactForm">
                     <div class="form_group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -206,13 +207,28 @@
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
-                    <!-- Modal for Success Message -->
                     <div id="messageModal" class="modal">
                         <div class="modal_content">
                             <p>Your message has been sent successfully!</p>
                             <button id="closeModal" class="btn">Close</button>
                         </div>
                     </div>
+                </form> -->
+                <form id="contactForm" class="contact_form">
+                    <div class="form_group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form_group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form_group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message here"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
         </div>

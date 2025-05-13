@@ -63,36 +63,33 @@ ScrollReveal().reveal(".portfolio__card", {
     interval: 500,
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contactForm");
-    const modal = document.getElementById("messageModal");
-    const closeModalButton = document.getElementById("closeModal");
 
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+// Initialize EmailJS with your user ID
+emailjs.init('43-d5EEyw7JDFYFwH'); // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
 
-        // Get form data
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const message = event.target.message.value;
+// Add event listener for the contact form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-        // Log data to the console
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Message:", message);
+    // Collect form data
+    const serviceID = 'service_3b4aip9'; // Replace with your EmailJS service ID
+    const templateID = 'template_15vrlht'; // Replace with your EmailJS template ID
 
-        // Show modal
-        modal.style.display = "flex";
+    // Send the form data using EmailJS
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            // Show success message
+            alert('Message sent successfully! Thankyou for contacting me.');
+        }, (error) => {
+            // Show error message
+            alert('Failed to send message. Please try again later.');
+            console.error('Error:', error);
+        });
 
-        // Reset the form
-        contactForm.reset();
-    });
-
-    // Close modal on button click
-    closeModalButton.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
+    // Reset the form after submission
+    this.reset();
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.getElementById("backToTop");
 
