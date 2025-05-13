@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/PortfolioJapanese.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <title>私のポートフォリオ</title>
 </head>
 
@@ -173,25 +174,21 @@
 
             <!-- Contact Form -->
             <div class="contact_form_container">
-                <form class="contact_form" id="contactForm">
+                <form id="contactForm" class="contact_form">
                     <div class="form_group">
-                        <input type="text" name="name" placeholder="お名前" required>
-                    </div>
-                    <div class="form_group">
-                        <input type="email" name="email" placeholder="メールアドレス" required>
+                        <label for="name">お名前</label>
+                        <input type="text" id="name" name="name" placeholder="お名前を入力してください" required>
                     </div>
                     <div class="form_group">
-                        <textarea name="message" rows="5" placeholder="メッセージ" required></textarea>
+                        <label for="email">メールアドレス</label>
+                        <input type="email" id="email" name="email" placeholder="メールアドレスを入力してください" required>
                     </div>
-                    <button type="submit" class="btn">送信</button>
-
-                    <!-- Modal -->
-                    <div id="messageModal" class="modal">
-                        <div class="modal_content">
-                            <p>メッセージが正常に送信されました！</p>
-                            <button id="closeModal" class="btn">閉じる</button>
-                        </div>
+                    <div class="form_group">
+                        <label for="message">メッセージ</label>
+                        <textarea id="message" name="message" rows="5" placeholder="ここにメッセージを入力してください"
+                            required></textarea>
                     </div>
+                    <button type="submit" class="btn">メッセージを送信</button>
                 </form>
             </div>
         </div>

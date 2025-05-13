@@ -88,35 +88,61 @@ ScrollReveal().reveal(".portfolio__card", {
 //     });
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contactForm");
-    const modal = document.getElementById("messageModal");
-    const closeModalButton = document.getElementById("closeModal");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const contactForm = document.getElementById("contactForm");
+//     const modal = document.getElementById("messageModal");
+//     const closeModalButton = document.getElementById("closeModal");
 
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+//     contactForm.addEventListener("submit", function (event) {
+//         event.preventDefault(); // Prevent form from refreshing the page
 
-        // Get form data
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const message = event.target.message.value;
+//         // Get form data
+//         const name = event.target.name.value;
+//         const email = event.target.email.value;
+//         const message = event.target.message.value;
 
-        // Log data to the console
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Message:", message);
+//         // Log data to the console
+//         console.log("Name:", name);
+//         console.log("Email:", email);
+//         console.log("Message:", message);
 
-        // Show modal
-        modal.style.display = "flex";
+//         // Show modal
+//         modal.style.display = "flex";
 
-        // Reset the form
-        contactForm.reset();
-    });
+//         // Reset the form
+//         contactForm.reset();
+//     });
 
-    // Close modal on button click
-    closeModalButton.addEventListener("click", function () {
-        modal.style.display = "none";
-    });
+//     // Close modal on button click
+//     closeModalButton.addEventListener("click", function () {
+//         modal.style.display = "none";
+//     });
+// });
+
+// Initialize EmailJS with your user ID
+emailjs.init('43-d5EEyw7JDFYFwH'); // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
+
+// Add event listener for the contact form submission
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const serviceID = 'service_3b4aip9'; // Replace with your EmailJS service ID
+    const templateID = 'template_15vrlht'; // Replace with your EmailJS template ID
+
+    // Send the form data using EmailJS
+    emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+            // Show success message
+            alert('メッセージが正常に送信されました！ご連絡いただきありがとうございます。');
+        }, (error) => {
+            // Show error message
+            alert('メッセージの送信に失敗しました。後でもう一度お試しください');
+            console.error('Error:', error);
+        });
+
+    // Reset the form after submission
+    this.reset();
 });
 
 document.addEventListener("DOMContentLoaded", function () {
