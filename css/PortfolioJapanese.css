@@ -463,10 +463,6 @@ nav {
         color: var(--secondary-color);
     }
 
-    .nav_links li:last-child {
-        display: none;
-    }
-
     .btn_large {
         display: flex;
     }

@@ -12,10 +12,26 @@ menuBtn.addEventListener("click", (e) => {
     );
 });
 
+
+// ...existing code...
 navLinks.addEventListener("click", (e) => {
     navLinks.classList.remove("open");
     menuBtnIcon.setAttribute("class", "ri-menu-3-line");
+    
+    // Add smooth scrolling for navigation links
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
 });
+// ...existing code...
 
 const scrollRevealOption = {
     distance: "50px",

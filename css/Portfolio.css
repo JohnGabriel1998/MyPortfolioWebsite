@@ -465,11 +465,7 @@ nav {
     .nav_links a:hover {
         color: var(--secondary-color);
     }
-
-    .nav_links li:last-child {
-        display: none;
-    }
-
+    
     .btn_large {
         display: flex;
     }
